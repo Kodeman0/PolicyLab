@@ -11,7 +11,7 @@ public class HomePolicy : Policy
     public HomePolicy(string number, string holderName, decimal buildingValue)
         : base(number, holderName)
     {
-        if (BuildingValue <= 0)
+        if (buildingValue <= 0)
             throw new ArgumentException("The building value must be more than 0", nameof(BuildingValue));
 
         BuildingValue = buildingValue;
@@ -20,7 +20,7 @@ public class HomePolicy : Policy
 
     public override decimal CalculatePremium()
     {
-        return (BuildingValue * (1 / 100)) + Claims.Count * 1000;
+        return (BuildingValue * 0.01m) + Claims.Count * 1000;
     }
 
 
