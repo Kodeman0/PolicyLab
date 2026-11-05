@@ -6,7 +6,7 @@ public abstract class Policy
 
     public string Number { get; }
     public string HolderName { get; }
-    public bool isCancelled { get; private set; }
+    public bool IsCancelled { get; private set; }
     public IReadOnlyList<Claim> Claims => _claims;
 
     protected Policy(string number, string holderName)
@@ -28,7 +28,7 @@ public abstract class Policy
 
     public void Cancel()
     {
-        isCancelled = true;
+        IsCancelled = true;
     }
 
     public abstract decimal CalculatePremium();
