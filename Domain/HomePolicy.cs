@@ -1,9 +1,6 @@
 ﻿namespace PolicyLab.Domain;
 
 
-
-
-
 public class HomePolicy : Policy
 {
     public decimal BuildingValue { get; }
@@ -12,7 +9,7 @@ public class HomePolicy : Policy
         : base(number, holderName)
     {
         if (buildingValue <= 0)
-            throw new ArgumentException("The building value must be more than 0", nameof(BuildingValue));
+            throw new ArgumentException("The building value must be more than 0", nameof(buildingValue));
 
         BuildingValue = buildingValue;
         
